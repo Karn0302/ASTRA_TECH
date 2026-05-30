@@ -1,0 +1,1 @@
+console.log(findnews(data,1));

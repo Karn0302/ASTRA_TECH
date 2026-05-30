@@ -1,5 +1,37 @@
 function findnews(data, id) {
+    for(let i = 0; i < data.length; i++) {
+        if(data[i].id === id){
+            return data[i].news;
+        }
+    }
+    return "News not found";
     
+}
+
+function limit(data,id){
+    for(let i=0;i<id;i++)
+    {
+        console.log(data[i].news);
+    }
+}
+function lastlimit(data,id){
+    for(let i=data.length-id;i<data.length;i++)
+    {
+        console.log(data[i].news);
+    }
+}
+
+function search_keyword(data,keyword){
+    let k=0;
+    for(let i=0;i<data.length;i++)
+    {
+        if(data[i].news.includes(keyword)){
+            console.log(data[i].news);
+            k=1;
+        }
+    }
+    if(k==0)
+    console.log("No news found with the keyword: " + keyword);
 }
 const data = [
     {
@@ -43,3 +75,9 @@ const data = [
         news: "Movie breaks box office records within two days",
     }
 ];
+// console.log(findnews(data,1));
+// limit(data,3);
+// lastlimit(data,3);
+// search_keyword(data,"is");
+
+
