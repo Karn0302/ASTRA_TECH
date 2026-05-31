@@ -8,6 +8,7 @@ function findnews(data, id) {
     
 }
 
+
 function limit(data,id){
     for(let i=0;i<id;i++)
     {
@@ -32,6 +33,20 @@ function search_keyword(data,keyword){
     }
     if(k==0)
     console.log("No news found with the keyword: " + keyword);
+}
+
+function keyword_search(data,keyword){
+    const n=[];
+    for(let i=0;i<data.length;i++)
+    {
+        if(data[i].news.toLowerCase().includes(keyword.toLowerCase())){
+            n.push(data[i].news);
+        }
+    }
+    if(n.length===0)
+        return 0;
+    else
+        return n;
 }
 const data = [
     {
@@ -79,5 +94,8 @@ const data = [
 // limit(data,3);
 // lastlimit(data,3);
 // search_keyword(data,"is");
+// console.log(data.slice(0,2));//without using loop findnews
+// console.log(data.slice((data.length-2),data.length));//without using loop limit function
+console.log(keyword_search(data,"is"));
 
 

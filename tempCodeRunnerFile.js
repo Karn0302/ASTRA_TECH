@@ -1,1 +1,1 @@
-console.log(findnews(data,1));
+search_keyword(data,"is");
